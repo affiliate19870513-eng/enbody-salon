@@ -52,12 +52,25 @@ const LP_SETTINGS = {
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;line-break:strict;word-break:normal;overflow-wrap:anywhere}
 /* 本文：行末まで流す（単語と文末は.nwで保護）。見出し・短い一文：文節の切れ目でだけ改行 */
 h1,h2,h3,.callout,.offer .big,.offer .small,.fv-sub,.checks li,summary,.label,.p-role,.cta,.head-cta,.pill,.tag,.facts dd{word-break:keep-all}
 h1,h2,h3,.callout,.offer .big,.fv-sub{text-wrap:balance}
 .nw{white-space:nowrap}
+/* 初回募集の告知（募集期間だけ表示） */
+.camp-band{background:var(--orange);color:#fff;text-align:center;padding:6px 12px 7px;font-size:12.5px;line-height:1.5}
+.camp-band p{margin:0}
+.camp-band b{font-weight:700;letter-spacing:.02em}
+.camp-band small{font-size:11px;opacity:.95}
+.offer-top{margin-top:4px;margin-bottom:32px}
+.sp-camp{text-align:center;font-size:12.5px;margin:0 0 6px;color:var(--ink)}
+.sp-camp b{color:var(--orange-text)}
+.sp-camp small{font-size:11px;color:var(--ink-soft)}
+.close-camp{background:var(--orange-tint);border-radius:var(--radius);padding:16px;margin-bottom:18px;color:var(--ink)}
+.close-camp b{color:var(--orange-text)}
+@media (min-width:760px){.camp-band{font-size:14px}.camp-band br{display:none}.camp-band b{margin-right:12px}}
+
 .offer .forever{font-weight:700;font-size:15px;margin-top:4px}
 html[data-lp-phase="after"] .plan.best{background:var(--bg);border:1px solid var(--rule);box-shadow:none}
 html[data-lp-phase="after"] .plan.annual{background:var(--paper);border:2px solid var(--orange-hi);box-shadow:0 8px 24px rgba(38,50,74,.08)}
@@ -304,6 +317,9 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
 
 <!-- ================= ヘッダー ================= -->
 <header class="site-head">
+  <div class="camp-band" data-phase="before during">
+    <p><b data-phase="before">初回募集 <span data-text="campaignStartLabel"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）</span><span class="nw">スタート</span></b><b data-phase="during">初回募集中 <span data-text="campaignEndLabel"><span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span>まで</b><br>今入会すると、<wbr>月額<span data-text="campaignPrice">6,500</span>円が<wbr>ずっと<wbr>続きます<small>（退会しない限り）</small></p>
+  </div>
   <div class="inner">
     <a class="logo" href="#top" aria-label="enbody オンラインサロン トップへ">
       <span><small>Ankle origin method</small><b>enbody</b></span><i aria-hidden="true"></i>
@@ -328,6 +344,16 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
   </div>
 
   <div class="wrap fv-body">
+    <!-- 初回募集の案内枠（募集期間中だけ、導入文より前に表示） -->
+    <div class="offer offer-top" data-phase="before during">
+      <span class="pill" data-phase="before">初回募集 <span data-text="campaignStartLabel"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）</span><span class="nw">スタート</span></span>
+      <span class="pill" data-phase="during">初回募集中</span>
+      <p class="big"><span class="nw">初回募集限定</span><br>月額<em><span data-text="campaignPrice">6,500</span>円</em></p>
+      <p class="forever">退会しない限り、<span class="key">ずっと<wbr>この価格</span></p>
+      <p class="small">通常月額<span data-text="monthlyPrice">7,000</span><span class="nw">円</span><br>募集期間：<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜<span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span><br>入会の<wbr>ご案内は、<wbr>公式<span class="nw">LINE</span>で<wbr><span class="nw">お届けします。</span></p>
+      <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
+    </div>
+
     <p class="lead"><span class="ln">食事も<wbr>運動も<wbr>がんばったのに、</span><br><span class="ln">脚だけ<wbr>変わらない。<wbr>それは、</span><br><span class="ln">努力が<wbr>足りないからではありません。</span></p>
     <p class="lead"><span class="ln">外壁や<wbr>内装を<wbr>いくら整えても、<wbr>基礎が</span><br><span class="ln">ぐらついていたら<wbr>建物は<wbr>安定しない。</span><br><span class="ln">体も<wbr>同じです。</span><br><strong class="ln">まず、<wbr>体の<wbr>基礎である<wbr>足首から。</strong></p>
     <p class="lead"><span class="nw">パーソナルジムenbodyの</span><br><span class="nw">アンクルメソッドを、</span><br>毎週の<wbr><span class="nw">ライブで。</span><br>おうちで<wbr><span class="nw">始められます。</span></p>
@@ -340,15 +366,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="nw">今日やることが</span><br><span class="nw">カレンダー</span>で<wbr><span class="nw">分かる</span></li>
     </ul>
 
-    <!-- 公式LINEへの案内枠（募集の時期で自動切り替え） -->
-    <div class="offer" data-phase="before during">
-      <span class="pill" data-phase="before">初回募集 <span data-text="campaignStartLabel"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）</span><span class="nw">スタート</span></span>
-      <span class="pill" data-phase="during">初回募集中</span>
-      <p class="big"><span class="nw">初回募集限定</span><br>月額<em><span data-text="campaignPrice">6,500</span>円</em></p>
-      <p class="forever">退会しない<wbr>限り、<span class="key">ずっと<wbr>この価格</span></p>
-      <p class="small">通常月額<span data-text="monthlyPrice">7,000</span><span class="nw">円</span><br>募集期間：<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜<span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span><br>入会の<wbr>ご案内は、<wbr>公式<span class="nw">LINE</span>で<wbr><span class="nw">お届けします。</span></p>
-      <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
-    </div>
+    
     <div class="offer" data-phase="after" hidden>
       <span class="pill"><span class="nw">サロン</span>の<wbr>最新情報</span>
       <p class="big">募集の<wbr><span class="nw">お知らせは、</span><br><em>公式<span class="nw">LINE</span></em><span class="nw">で。</span></p>
@@ -602,7 +620,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
         <h3>月額払い</h3>
         <p class="was" data-phase="before during"><s>通常 <span data-text="monthlyPrice">7,000</span>円</s></p>
         <p class="price"><span data-text="nowPrice">6,500</span><small>円／月</small></p>
-        <p class="calc" data-phase="before during"><b>初回募集で<wbr>入会された<wbr>方は、<wbr>退会しない<wbr>限りずっと<wbr>この価格です。</b></p>
+        <p class="calc" data-phase="before during"><b>初回募集で<wbr>入会された<wbr>方は、<wbr>退会しない限りずっと<wbr>この価格です。</b></p>
         <p class="calc" data-phase="before during"><b>初回募集の<wbr>期間：<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜<span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span></b></p>
         <p class="calc">動画見放題・毎週の<wbr><span class="nw">ライブ・</span><span class="nw">質問BOX</span><span class="nw">・メンバー</span>同士の<wbr>交流が、<wbr>すべて<wbr><span class="nw">含まれています。</span></p>
       </div>
@@ -675,6 +693,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
 <section class="closing">
     <div class="wrap center">
     <h2>外壁より<wbr><span class="nw">先に、</span><br><span class="accent">基礎工事</span>を。</h2>
+    <p class="close-camp" data-phase="before during"><b>初回募集は<span data-text="campaignEndLabel"><span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span>まで。</b><br>今入会すると、<wbr>退会しない限り、<wbr>月額<span data-text="campaignPrice">6,500</span>円が<wbr>ずっと<wbr><span class="nw">続きます。</span></p>
     <p>体の<wbr>基礎である<wbr>足首から、<wbr>一緒に<wbr><span class="nw">整えていきましょう。</span><br>毎週の<wbr>朝の<wbr><span class="nw">30分</span>が、<wbr>これからの<wbr>体の<wbr>土台に<wbr><span class="nw">なります。</span><br>脚の<wbr><span class="nw">ライン</span>に<wbr>自信が<wbr>持てる<wbr>毎日を、<wbr><span class="nw">ここから。</span></p>
     <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
     <p class="cta-note">募集の<wbr>お知らせや、<wbr><span class="nw">サロン</span>の<wbr>最新情報を<wbr><span class="nw">お届けします。</span></p>
@@ -685,6 +704,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
 
 <!-- スマホ用：画面下の固定ボタン（ページ内のLINEボタンが画面に見えていない時だけ表示） -->
 <div class="sp-bar" id="spBar">
+  <p class="sp-camp" data-phase="before during">初回募集：<b>月額<span data-text="campaignPrice">6,500</span>円が<wbr>ずっと</b><small>（退会しない限り）</small></p>
   <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
 </div>
 
