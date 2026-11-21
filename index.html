@@ -59,6 +59,17 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16p
 h1,h2,h3,.callout,.offer .big,.offer .small,.fv-sub,.checks li,summary,.label,.p-role,.cta,.head-cta,.pill,.tag,.facts dd{word-break:keep-all}
 h1,h2,h3,.callout,.offer .big,.fv-sub{text-wrap:balance}
 .nw{white-space:nowrap}
+.cta.soon{background:#B9B2A8;box-shadow:0 5px 0 #948C82;cursor:default}
+.cta.soon:active{transform:none;box-shadow:0 5px 0 #948C82}
+/* カウントダウン */
+.cd{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:.02em}
+.cd-label{margin-right:4px}
+.cd-box{margin:18px 0 2px;background:var(--bg);border-radius:12px;padding:12px 10px 10px}
+.cd-box-label{font-size:13px;font-weight:700;color:var(--ink-soft);margin:0}
+.cd-box-time{margin:2px 0 4px;font-family:var(--serif);font-weight:900;color:var(--orange-text);font-size:clamp(19px,5.6vw,26px);font-variant-numeric:tabular-nums;line-height:1.3;white-space:nowrap}
+.cd-box-time small{font-family:var(--sans);font-size:.55em;font-weight:700;color:var(--ink);margin:0 3px 0 1px}
+.cd-box-period{font-size:12.5px;color:var(--ink-soft);margin:0}
+.sp-cd{display:block;font-weight:700;color:var(--orange-text);font-variant-numeric:tabular-nums}
 .sub-link{margin-top:12px;font-size:13px}
 .sub-link a,.cta-note a{color:#05923F;font-weight:700;text-underline-offset:3px}
 /* 初回募集の告知（募集期間だけ表示） */
@@ -339,7 +350,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
 <header class="site-head">
   <div class="camp-band" data-phase="before during">
     <svg class="spark s1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.3 7.3 2.2-7.3 2.2L12 20.5l-2.2-7.3L2.5 11l7.3-2.2z"/></svg><svg class="spark s2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.3 7.3 2.2-7.3 2.2L12 20.5l-2.2-7.3L2.5 11l7.3-2.2z"/></svg><svg class="spark s3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.3 7.3 2.2-7.3 2.2L12 20.5l-2.2-7.3L2.5 11l7.3-2.2z"/></svg><svg class="spark s4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.3 7.3 2.2-7.3 2.2L12 20.5l-2.2-7.3L2.5 11l7.3-2.2z"/></svg>
-    <p><b data-phase="before">初回募集 <span data-text="campaignStartLabel"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）</span><span class="nw">スタート</span></b><b data-phase="during">初回募集中 <span data-text="campaignEndLabel"><span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span>まで</b><br><span class="nw">今入会で、ずっと<span class="price-glow">月額<span data-text="campaignPrice">6,500</span>円</span></span><small class="nw">（退会しない限り）</small></p>
+    <p><b data-phase="before">初回募集 <span data-text="campaignStartLabel"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）</span><span class="nw">スタート</span></b><b data-phase="during">初回募集中 <span data-text="campaignEndLabel"><span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span>まで</b><br><span class="nw">今入会で、ずっと<span class="price-glow">月額<span data-text="campaignPrice">6,500</span>円</span></span><small class="nw">（退会しない限り）</small><br><span class="cd" data-cd><span class="cd-label"></span><span class="cd-time"></span></span></p>
   </div>
   <div class="inner">
     <a class="logo" href="#top" aria-label="enbody オンラインサロン トップへ">
@@ -371,9 +382,9 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
       <span class="pill" data-phase="during">初回募集中</span>
       <p class="big"><span class="nw">初回募集限定</span><br>月額<em><span data-text="campaignPrice">6,500</span>円</em></p>
       <p class="forever">退会しない限り、<span class="key">ずっと<wbr>この価格</span></p>
-      <p class="small">通常月額<span data-text="monthlyPrice">7,000</span><span class="nw">円</span><br>募集期間：<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜<span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span><br><span data-phase="before">募集が<wbr>始まったら、<wbr>公式<span class="nw">LINE</span>で<wbr>お知らせします。</span><span data-phase="during">下の<wbr><span class="nw">ボタン</span>から、<wbr>今すぐ<wbr>申し込めます。</span></p>
+      <p class="small">通常月額<span data-text="monthlyPrice">7,000</span><span class="nw">円</span><br><span data-phase="before"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）<wbr>0:<span class="nw">00</span>から<wbr>申し込めます。</span><span data-phase="during">下の<wbr><span class="nw">ボタン</span>から、<wbr>今すぐ<wbr>申し込めます。</span></p>
+      <div class="cd-box" data-phase="before during"><p class="cd-box-label" data-cd-label></p><p class="cd-box-time" data-cd-big></p><p class="cd-box-period">申込期間：<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜 <span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span></p></div>
       <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" data-cta="main" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
-          <p class="sub-link" data-phase="during"><a href="https://lin.ee/xUnPVEJ" data-href="lineUrl" target="_blank" rel="noopener">まずは<wbr>公式<span class="nw">LINE</span>で<wbr>情報を<wbr>受け取る</a></p>
     </div>
 
     <p class="lead"><span class="ln">食事も<wbr>運動も<wbr>がんばったのに、</span><br><span class="ln">脚だけ<wbr>変わらない。<wbr>それは、</span><br><span class="ln">努力が<wbr>足りないからではありません。</span></p>
@@ -585,15 +596,15 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
 <section class="sec-white">
   <div class="wrap">
     <span class="label">FLOW</span>
-    <h2 data-phase="before after"><span class="nw">LINE登録から、</span><br>はじめての<wbr><span class="nw">ライブ</span>まで。</h2><h2 data-phase="during"><span class="nw">申し込みから、</span><br>はじめての<wbr><span class="nw">ライブ</span>まで。</h2>
+    <h2 data-phase="after"><span class="nw">LINE登録から、</span><br>はじめての<wbr><span class="nw">ライブ</span>まで。</h2><h2 data-phase="before during"><span class="nw">申し込みから、</span><br>はじめての<wbr><span class="nw">ライブ</span>まで。</h2>
     <ol class="flow">
       <li>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4C7 4 3 7.2 3 11.2c0 2.3 1.3 4.3 3.4 5.6L6 20l3.6-2.1c.8.2 1.6.3 2.4.3 5 0 9-3.2 9-7S17 4 12 4z"/></svg></span>
-        <div><span class="step">STEP 01</span><h3 data-phase="before after">公式<span class="nw">LINE</span>に<wbr>友だち追加する</h3><p data-phase="before after">募集の<wbr>お知らせや、<wbr><span class="nw">サロン</span>の<wbr>最新情報が<wbr><span class="nw">届きます。</span></p><h3 data-phase="during">申し込み<span class="nw">ボタン</span>を<wbr>押す</h3><p data-phase="during">この<wbr><span class="nw">ページ</span>の<wbr>「初回募集に<wbr>申し込む」<wbr><span class="nw">ボタン</span>から、<wbr><span class="nw">FANTS</span>の<wbr>入会<span class="nw">ページ</span>に<wbr><span class="nw">進みます。</span></p></div>
+        <div><span class="step">STEP 01</span><h3 data-phase="after">公式<span class="nw">LINE</span>に<wbr>友だち追加する</h3><p data-phase="after">募集の<wbr>お知らせや、<wbr><span class="nw">サロン</span>の<wbr>最新情報が<wbr><span class="nw">届きます。</span></p><h3 data-phase="before during">申し込み<span class="nw">ボタン</span>を<wbr>押す</h3><p data-phase="before during">この<wbr><span class="nw">ページ</span>の<wbr>「初回募集に<wbr>申し込む」<wbr><span class="nw">ボタン</span>から、<wbr><span class="nw">FANTS</span>の<wbr>入会<span class="nw">ページ</span>に<wbr><span class="nw">進みます。</span></p></div>
       </li>
       <li>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-        <div><span class="step">STEP 02</span><h3>募集期間中に<wbr>申し込む</h3><p><span data-phase="before after"><span class="nw">LINE</span>で<wbr>届く<wbr>案内から、</span><span class="nw">FANTS</span><wbr>（<span class="nw">サロン</span>を<wbr>運営している<wbr><span class="nw">サービス</span>）の<wbr><span class="nw">アカウント</span>を<wbr>登録して、<wbr><span class="nw">クレジットカード</span>で<wbr><span class="nw">お支払いください。</span></p></div>
+        <div><span class="step">STEP 02</span><h3>募集期間中に<wbr>申し込む</h3><p><span data-phase="after"><span class="nw">LINE</span>で<wbr>届く<wbr>案内から、</span><span class="nw">FANTS</span><wbr>（<span class="nw">サロン</span>を<wbr>運営している<wbr><span class="nw">サービス</span>）の<wbr><span class="nw">アカウント</span>を<wbr>登録して、<wbr><span class="nw">クレジットカード</span>で<wbr><span class="nw">お支払いください。</span></p></div>
       </li>
       <li>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
@@ -672,7 +683,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
     </div>
     <p class="compare-note"><span class="key">店舗<span class="nw">パーソナル</span>の<wbr><span class="nw">1回分</span>より<wbr>安く</span>、<wbr>毎週の<wbr><span class="nw">ライブ</span>と<wbr>質問が<wbr><span class="nw">ついてきます。</span></p>
     <p class="note" data-phase="before during">※初回募集で<wbr>入会後、<wbr>退会して<wbr>再入会される<wbr>場合は、<wbr>その<wbr>時点の<wbr>通常価格に<wbr><span class="nw">なります。</span></p>
-    <p class="note">入会の<wbr>受付は、<wbr>募集期間中のみ<wbr>行っています。<wbr>次回の<wbr>募集時期は、<wbr>公式<span class="nw">LINE</span>で<wbr><span class="nw">お知らせします。</span></p>
+    <p class="note">入会の<wbr>受付は、<wbr>募集期間中のみ<wbr>行っています。<span data-phase="after">次回の<wbr>募集時期は、<wbr>公式<span class="nw">LINE</span>で<wbr>お知らせします。</span></p>
     <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" data-cta="main" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
 
     <div class="terms">
@@ -694,8 +705,8 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
     <span class="label">Q&amp;A</span>
     <h2>よく<wbr>ある<wbr>ご質問</h2>
     <div class="faq">
-      <details><summary><span class="nw">申し込み方法は？</span></summary><p><span data-phase="during">募集期間中は、<wbr>この<wbr><span class="nw">ページ</span>の<wbr>「初回募集に<wbr>申し込む」<wbr><span class="nw">ボタン</span>から、<wbr><span class="nw">FANTS</span>の<wbr>入会<span class="nw">ページ</span>に<wbr>進んで<wbr>お申し込みいただけます。</span><span data-phase="before after">募集期間中に、<wbr>公式<span class="nw">LINE</span>で<wbr>ご案内する<wbr>専用の<wbr>入会<span class="nw">ページ</span>から<wbr>お申し込みいただけます。</span><span class="nw">FANTS</span>の<wbr><span class="nw">アカウント</span>作成・決済登録の<wbr>あと、<wbr><span class="nw">アプリ</span>を<wbr><span class="nw">ダウンロード</span>して<wbr>ご利用を<wbr>開始していただく<wbr><span class="nw">流れです。</span><br>詳しくは<a href="https://support.fants.jp/hc/ja/articles/10248985026063" target="_blank" rel="noopener"><span class="nw">サロン</span>の<wbr>入会方法<wbr>（<span class="nw">FANTS</span><span class="nw">ヘルプ</span>）</a>を<wbr><span class="nw">ご確認ください。</span></p></details>
-      <details><summary>いつでも<wbr><span class="nw">入会できますか？</span></summary><p>入会の<wbr>受付は、<wbr>募集期間中のみ<wbr>行っています。<wbr>募集が<wbr>始まったら<wbr>公式<span class="nw">LINE</span>で<wbr>お知らせしますので、<wbr>友だち追加してお待ち<wbr><span class="nw">ください。</span></p></details>
+      <details><summary><span class="nw">申し込み方法は？</span></summary><p><span data-phase="before during">募集期間中は、<wbr>この<wbr><span class="nw">ページ</span>の<wbr>「初回募集に<wbr>申し込む」<wbr><span class="nw">ボタン</span>から、<wbr><span class="nw">FANTS</span>の<wbr>入会<span class="nw">ページ</span>に<wbr>進んで<wbr>お申し込みいただけます。</span><span data-phase="after">募集期間中に、<wbr>公式<span class="nw">LINE</span>で<wbr>ご案内する<wbr>専用の<wbr>入会<span class="nw">ページ</span>から<wbr>お申し込みいただけます。</span><span class="nw">FANTS</span>の<wbr><span class="nw">アカウント</span>作成・決済登録の<wbr>あと、<wbr><span class="nw">アプリ</span>を<wbr><span class="nw">ダウンロード</span>して<wbr>ご利用を<wbr>開始していただく<wbr><span class="nw">流れです。</span><br>詳しくは<a href="https://support.fants.jp/hc/ja/articles/10248985026063" target="_blank" rel="noopener"><span class="nw">サロン</span>の<wbr>入会方法<wbr>（<span class="nw">FANTS</span><span class="nw">ヘルプ</span>）</a>を<wbr><span class="nw">ご確認ください。</span></p></details>
+      <details><summary>いつでも<wbr><span class="nw">入会できますか？</span></summary><p><span data-phase="before during">入会の<wbr>受付は、<wbr>募集期間中のみです。<wbr>初回募集の<wbr>申込期間は、<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜 <span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span>です。</span><span data-phase="after">入会の<wbr>受付は、<wbr>募集期間中のみ<wbr>行っています。<wbr>募集が<wbr>始まったら<wbr>公式<span class="nw">LINE</span>で<wbr>お知らせしますので、<wbr>友だち追加してお待ちください。</span></p></details>
       <details><summary>運動経験が<wbr>なくても<wbr><span class="nw">大丈夫ですか？</span></summary><p>は<wbr>い、<wbr>大丈夫です。<wbr>まずは<wbr>「初めての<wbr><span class="nw">アンクルメソッド</span>」の<wbr>お部屋から、<wbr>基本を<wbr>ひとつずつ<wbr><span class="nw">始められます。</span></p></details>
       <details><summary><span class="nw">ライブ</span>は<wbr><span class="nw">いつですか？</span></summary><p>現在は<span data-text="liveTime">毎週<wbr>金曜の<wbr>朝<span class="nw">7時</span>から<wbr>約<span class="nw">30分</span></span>です。<wbr>時間は<wbr>変更に<wbr>なる<wbr>場合が<wbr><span class="nw">あります。</span></p></details>
       <details><summary><span class="nw">ライブ</span>に<wbr>参加できない<wbr>日は<wbr><span class="nw">どうすればいいですか？</span></summary><p><span class="nw">ライブ</span>は<wbr>録画しているので、<wbr><span class="nw">2ヶ月</span>間いつでも<wbr><span class="nw">見返せます。</span></p></details>
@@ -717,8 +728,9 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
     <h2>外壁より<wbr><span class="nw">先に、</span><br><span class="accent">基礎工事</span>を。</h2>
     <p class="close-camp" data-phase="before during"><b>初回募集は<span data-text="campaignEndLabel"><span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span>まで。</b><br>今入会すると、<wbr>退会しない限り、<wbr>月額<span data-text="campaignPrice">6,500</span>円が<wbr>ずっと<wbr><span class="nw">続きます。</span></p>
     <p>体の<wbr>基礎である<wbr>足首から、<wbr>一緒に<wbr><span class="nw">整えていきましょう。</span><br>毎週の<wbr>朝の<wbr><span class="nw">30分</span>が、<wbr>これからの<wbr>体の<wbr>土台に<wbr><span class="nw">なります。</span><br>脚の<wbr><span class="nw">ライン</span>に<wbr>自信が<wbr>持てる<wbr>毎日を、<wbr><span class="nw">ここから。</span></p>
+    <div class="cd-box" data-phase="before during"><p class="cd-box-label" data-cd-label></p><p class="cd-box-time" data-cd-big></p><p class="cd-box-period">申込期間：<span data-text="campaignPeriod"><span class="nw">11</span>/<span class="nw">22</span><wbr>（日）〜 <span class="nw">11</span>/<span class="nw">30</span><wbr>（月）<wbr><span class="nw">23</span>:<span class="nw">59</span></span></p></div>
     <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" data-cta="main" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
-    <p class="cta-note" data-phase="before after">募集の<wbr>お知らせや、<wbr><span class="nw">サロン</span>の<wbr>最新情報を<wbr><span class="nw">お届けします。</span></p><p class="cta-note" data-phase="during"><span class="nw">FANTS</span>の<wbr>入会<span class="nw">ページ</span>に<wbr><span class="nw">進みます。</span><br><a href="https://lin.ee/xUnPVEJ" data-href="lineUrl" target="_blank" rel="noopener">まずは<wbr>公式<span class="nw">LINE</span>で<wbr>情報を<wbr>受け取る</a></p>
+    <p class="cta-note" data-phase="after">募集の<wbr>お知らせや、<wbr><span class="nw">サロン</span>の<wbr>最新情報を<wbr><span class="nw">お届けします。</span></p><p class="cta-note" data-phase="before during"><span class="nw">FANTS</span>の<wbr>入会<span class="nw">ページ</span>に<wbr><span class="nw">進みます。</span></p>
   </div>
 </section>
 
@@ -726,7 +738,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
 
 <!-- スマホ用：画面下の固定ボタン（ページ内の申し込み・LINEボタンが画面に見えていない時だけ表示） -->
 <div class="sp-bar" id="spBar">
-  <p class="sp-camp" data-phase="before during">初回募集：<b>月額<span data-text="campaignPrice">6,500</span>円が<wbr>ずっと</b><small>（退会しない限り）</small></p>
+  <p class="sp-camp" data-phase="before during"><span class="sp-cd" data-cd-short></span>初回募集：<b>月額<span data-text="campaignPrice">6,500</span>円が<wbr>ずっと</b><small>（退会しない限り）</small></p>
   <a class="cta line" href="https://lin.ee/xUnPVEJ" data-href="lineUrl" data-cta="main" target="_blank" rel="noopener"><span class="nw">LINE</span>で<wbr>友だち追加する</a>
 </div>
 
@@ -739,7 +751,7 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
       <a href="https://enbody.fants.jp/terms?company_id=101509" target="_blank" rel="noopener">利用規約</a>
       <a href="https://enbody.fants.jp/inquiry?company_id=101509" target="_blank" rel="noopener">お問い合わせ</a>
     </nav>
-    <p class="line-note">公式<span class="nw">LINE</span>の<wbr>友だち追加で<wbr>取得する<wbr>情報は、<wbr><span class="nw">サロン</span>の<wbr>募集案内と<wbr>最新情報の<wbr>お届けの<wbr>ためにのみ<wbr><span class="nw">利用します。</span></p>
+    <p class="line-note" data-phase="after">公式<span class="nw">LINE</span>の<wbr>友だち追加で<wbr>取得する<wbr>情報は、<wbr><span class="nw">サロン</span>の<wbr>募集案内と<wbr>最新情報の<wbr>お届けの<wbr>ためにのみ<wbr><span class="nw">利用します。</span></p>
     <p>運営：<span class="nw">Tlic</span>合同会社<wbr>（<span class="nw">パーソナルジム</span> <span class="nw">en</span><wbr><span class="nw">body）</span><br>© enbody</p>
   </div>
 </footer>
@@ -767,6 +779,16 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
   document.querySelectorAll('[data-text="campaignPeriod"]').forEach(function (el) {
     el.innerHTML = String(s.campaignPeriod).split(" ").map(function (x) { return '' + x + ''; }).join("");
   });
+  if (phase === "before") {
+    document.querySelectorAll("[data-cta]").forEach(function (a) {
+      if (a.dataset.cta === "head") { a.hidden = true; return; }
+      a.removeAttribute("href");
+      a.setAttribute("aria-disabled", "true");
+      a.classList.remove("line");
+      a.classList.add("soon");
+      a.textContent = s.campaignStartLabel + "0:00 受付開始";
+    });
+  }
   if (phase === "during") {
     document.querySelectorAll("[data-cta]").forEach(function (a) {
       a.href = s.joinUrl;
@@ -776,6 +798,27 @@ footer .line-note{max-width:34em;margin:0 auto 10px;font-size:11.5px;color:#AEB5
     });
   }
   document.documentElement.dataset.lpPhase = phase;
+
+  /* カウントダウン（1秒ごとに更新。開始・締切の時刻を過ぎたら、自動で表示を切り替える） */
+  if (phase !== "after") {
+    var target = phase === "before" ? start : end;
+    var label = phase === "before" ? "募集開始まで" : "締切まで";
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    var tick = function () {
+      var left = Math.max(0, target - Date.now());
+      if (left <= 0) { location.reload(); return; }
+      var t = Math.floor(left / 1000), d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+      var plain = (d ? d + "日" : "") + h + "時間" + pad(m) + "分" + pad(sec) + "秒";
+      var big = (d ? d + "<small>日</small>" : "") + h + "<small>時間</small>" + pad(m) + "<small>分</small>" + pad(sec) + "<small>秒</small>";
+      document.querySelectorAll("[data-cd] .cd-label").forEach(function (el) { el.textContent = label + " あと"; });
+      document.querySelectorAll("[data-cd] .cd-time").forEach(function (el) { el.textContent = plain; });
+      document.querySelectorAll("[data-cd-label]").forEach(function (el) { el.textContent = label + "　あと"; });
+      document.querySelectorAll("[data-cd-big]").forEach(function (el) { el.innerHTML = big; });
+      document.querySelectorAll("[data-cd-short]").forEach(function (el) { el.textContent = label + " あと" + plain; });
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
 })();
 </script>
 
